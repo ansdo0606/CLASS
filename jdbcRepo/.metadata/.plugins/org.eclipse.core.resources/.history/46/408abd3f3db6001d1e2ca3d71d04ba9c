@@ -1,0 +1,42 @@
+package com.kh.app.member;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.kh.app.template.JDBCTemplate;
+
+//비지니스 로직 실행
+public class MemberService {
+
+	//회원가입
+	public void join(MemberVo vo) throws Exception {
+		
+		//유효성 검사
+		//vo.getPwd().length() > 4
+				
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//입력받기
+		
+		
+		//sql
+		String sql = "INSERT INTO MEMBER(NO, ID, PWD, NICK) VALEUS(SEQ_MEMBER_NO.NEXTVAL,?,?,?)";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, vo.getId());
+		pstmt.setString(2, vo.getPwd());
+		pstmt.setString(3, vo.getNick());
+		int result = pstmt.executeUpdate();
+		
+		//result
+		if(result == 1 ) {
+			
+		}else {
+			
+		}
+		//close
+		
+		
+	}
+	
+}

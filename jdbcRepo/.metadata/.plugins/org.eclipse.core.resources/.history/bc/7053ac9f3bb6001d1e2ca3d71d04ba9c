@@ -1,0 +1,19 @@
+package com.kh.app.member;
+
+//비지니스 로직 실행
+public class MemberService {
+
+	//회원가입
+	public void join(MemberVo vo) {
+		
+		//아이디 유효성 검사
+		
+		//비번 유효성 검사
+		
+		//SQL
+		
+		
+		
+	}
+	
+}

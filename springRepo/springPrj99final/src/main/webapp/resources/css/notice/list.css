@@ -1,0 +1,15 @@
+ main table {
+        width: 600px;
+        margin: auto;
+        text-align: center;
+    }
+    main table td{
+        border: 1px solid black;
+    }
+    #write-btn-area{
+        width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    

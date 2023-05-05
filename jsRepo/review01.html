@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>복습</h1>
+
+
+    <form action="" method="">
+
+        아이디 : <input type="text" name="memberId"> <button type="button" onclick="f01();">중복 검사</button>
+        <div id="resultBox">중복검사를 진행하세요.</div>
+        <br>
+        비밀번호 : <input type="password" name="memberPwd">
+
+    </form>
+
+    <script>
+        function f01() {
+            //입력한 아이디가 admin인지 체크하여 알람 발생시키기
+            let result = document.querySelector("input[name=memberId]").value;
+            if (result != "admin") {
+                //alert("사용이 가능한 아이디 입니다.");
+                document.querySelector("#resultBox").innerText = "사용가능";
+            }else{
+                //alert("이미 사용중인 아이디 입니다.");
+                document.querySelector("#resultBox").innerText = "사용금지";
+            }
+        }
+    </script>
+</body>
+</html>

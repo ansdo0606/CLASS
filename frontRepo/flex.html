@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            border: 1px solid red;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; /*기본적으로는 no wrap으로 사이즈 줄여서 우겨넣음*/
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: center;
+            /* display: flex; 인라인처럼 한줄에 표시됨
+            justify-content: center; x축 중심으로 가운데 정렬
+            align-items: center; y축 중심으로 가운데 정렬
+            */
+        }
+        .item{
+            border: 1px solid blue;
+            width: 100px;
+            height: 100px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;  
+        }
+        /* #target{
+            align-self: center;
+            order: 10;
+        } */
+    </style>
+</head>
+<body>
+    
+    <h1>flex</h1>
+
+    <div class="outer">
+        <div class="item"><span>1번스팬</span></div>
+        <div class="item" id="target"><span>2번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+       
+      
+    </div>
+
+
+
+</body>
+</html>

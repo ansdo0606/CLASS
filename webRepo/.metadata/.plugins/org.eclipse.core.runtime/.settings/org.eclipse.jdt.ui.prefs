@@ -1,0 +1,12 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.kh.app.member.MemberService"><rhs name\="com.kh.app.member.MemberService"/></lhs><lhs name\="com.kh.app.member.MemberDao"><rhs name\="com.kh.app.member.MemberDao"/></lhs><lhs name\="com.kh.app.member.service.MemberService"><rhs name\="com.kh.app.member.service.MemberService"/></lhs><lhs name\="com.kh.app.member.dao.MemberDao"><rhs name\="com.kh.app.member.dao.MemberDao"/></lhs><lhs name\="com.kh.app.member.vo.MemberVo"><rhs name\="com.kh.app.member.vo.MemberVo"/></lhs><lhs name\="com.kh.app.board.dao.BoardDao"><rhs name\="com.kh.app.board.dao.BoardDao"/></lhs><lhs name\="com.kh.app.board.vo.BoardVo"><rhs name\="com.kh.app.board.vo.BoardVo"/></lhs><lhs name\="com.kh.app.board.service.BoardService"><rhs name\="com.kh.app.board.service.BoardService"/></lhs><lhs name\="com.kh.app.board.vo.AttachmentVo"><rhs name\="com.kh.app.board.vo.AttachmentVo"/></lhs></history>
+content_assist_number_of_computers=17
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=22
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

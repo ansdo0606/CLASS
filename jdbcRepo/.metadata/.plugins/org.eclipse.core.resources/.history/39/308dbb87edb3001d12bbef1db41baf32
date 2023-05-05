@@ -1,0 +1,38 @@
+package com.kh.board;
+
+import java.util.List;
+
+import javax.xml.crypto.Data;
+
+public class BoardPrinter {
+	
+	//목록조회
+	public void printBoardList(List<BoardData> list) {
+		for(BoardData data : list) {
+			System.out.println("조회성공");
+			System.out.print(data.getNo());
+			System.out.print("/");
+			System.out.print(data.getTitle());
+			System.out.print("/");
+			System.out.print(data.getNick());
+			System.out.print("/");
+			System.out.print(data.getEnrollDate());
+		}
+	}
+	
+	
+	//상세조회
+	public void printBoardOne(BoardData data) {
+		
+		System.out.println("조회성공");
+		System.out.print(data.getNo());
+		System.out.print("/");
+		System.out.print(data.getTitle());
+		System.out.print("/");
+		System.out.print(data.getContent());
+		System.out.print("/");
+		System.out.print(data.getNick());
+		System.out.print("/");
+		System.out.print(data.getEnrollDate());
+	}
+}

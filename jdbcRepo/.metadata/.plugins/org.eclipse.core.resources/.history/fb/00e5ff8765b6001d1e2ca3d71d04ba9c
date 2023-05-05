@@ -1,0 +1,66 @@
+package com.kh.app.member;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.kh.app.main.Main;
+import com.kh.app.template.JDBCTemplate;
+
+//입력받기
+//데이터 뭉치기
+//서비스 호출
+public class MemberController {
+	
+	//회원가입
+	public void join() throws Exception {
+		
+		System.out.println("아이디 : ");
+		String memberId = Main.SC.nextLine();
+		System.out.println("비밀번호 : ");
+		String memberPwd = Main.SC.nextLine();
+		System.out.println("닉네임 : ");
+		String memberNick = Main.SC.nextLine();
+	
+		//데이터 뭉치기
+		MemberVo vo = new MemberVo();
+		vo.setId(memberId);
+		vo.setPwd(memberPwd);
+		vo.setNick(memberNick);
+		
+		//서비스 호출
+		Connection conn = JDBCTemplate.getConnection();
+		
+		String sql = "INSERT INTO MEMBER(NO, ID, PWD , NICK) VALUES(SEQ_MEMBER_NO.NEXTVAL,?,?,?)";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, vo.getId());
+		pstmt.setString(2, vo.getPwd());
+		pstmt.setString(3, vo.getNick());
+		int result = pstmt.executeUpdate();
+		
+		if (result == 1) {
+			System.out.println("회원가입 성공");
+			conn.commit();
+		}else {
+			System.out.println("회원가입 실패");
+			conn.rollback();
+		}
+		
+		conn.close();
+		
+		
+		
+		
+//		MemberService ms = new MemberService();
+//		ms.join();
+		
+	}
+	
+	//로그인
+	
+	
+	//비번변경
+	
+	
+	//탈퇴
+}

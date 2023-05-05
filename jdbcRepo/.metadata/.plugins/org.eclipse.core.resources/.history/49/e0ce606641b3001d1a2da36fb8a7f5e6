@@ -1,0 +1,17 @@
+package com.kh.board;
+
+public class BoardPrinter {
+	public void printBoardOne(BoardData data) {
+		
+		System.out.println("조회성공");
+		System.out.print(data.getNo());
+		System.out.print("/");
+		System.out.print(data.getTitle());
+		System.out.print("/");
+		System.out.print(data.getContent());
+		System.out.print("/");
+		System.out.print(data.getNick());
+		System.out.print("/");
+		System.out.print(data.getEnrollDate());
+	}
+}

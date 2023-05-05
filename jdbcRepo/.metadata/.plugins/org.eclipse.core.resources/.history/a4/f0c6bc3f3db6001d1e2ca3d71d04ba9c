@@ -1,0 +1,13 @@
+package com.kh.app.member;
+
+//Data Access Object 디비접근
+public class MemberDao {
+	
+	//회원가입
+	public void join() {
+		
+	}
+	
+		
+	}
+

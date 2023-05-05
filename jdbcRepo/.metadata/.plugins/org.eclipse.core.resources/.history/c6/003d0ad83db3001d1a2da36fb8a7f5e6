@@ -1,0 +1,11 @@
+package com.kh.board;
+
+public class BoardData {
+	private String no;
+	private String title;
+	private String content;
+	private String writer;
+	private String enrollDate;
+	private String nick;
+	private String no;
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="member">
+	<insert id="join">
+		INSERT INTO MEMBER
+		(
+			NO
+			,ID
+			,PWD
+			,NICK
+			,PROFILE
+			,HOBBY
+			
+		)
+		VALUES
+		(
+			SEQ_MEMBER_NO.NEXTVAL
+			,#{id}
+			,#{pwd}
+			,#{nick}
+			,#{profileName}
+			,#{hobbyStr}
+		)
+	</insert>
+
+	<select id="checkId" resultType="int">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE ID = #{id}
+	</select>
+
+	<select id="login" resultType="memberVo">
+		SELECT 
+			NO
+			,ID
+			,PWD
+			,NICK
+			,PROFILE	AS profileName
+			,HOBBY		AS hobbyStr
+			,STATUS
+			,ENROLL_DATE
+			,MODIFY_DATE 
+		FROM MEMBER 
+		WHERE 	ID = #{id}
+		AND 	PWD = #{pwd}
+		AND 	STATUS = 'O'
+	</select>
+
+	<update id="edit">
+		UPDATE MEMBER
+			SET
+				PWD = #{pwd}
+				,NICK = #{nick}
+				,PROFILE = #{profile}
+				,HOBBY = #{hobbyStr}
+				,MODIFY_DATE = SYSDATE
+			WHERE
+				NO = #{no}
+	</update>
+
+	<select id="getMember" resultType="memberVo">
+		SELECT 
+			NO
+			,ID
+			,PWD
+			,NICK
+			,PROFILE
+			,HOBBY		AS hobbyStr
+			,STATUS
+			,ENROLL_DATE
+			,MODIFY_DATE 
+		FROM MEMBER
+		WHERE NO = #{no}
+	</select>
+	
+	<update id="quit">
+		UPDATE MEMBER
+			SET
+				STATUS = 'X'
+			WHERE NO = #{no}
+	</update>
+</mapper>

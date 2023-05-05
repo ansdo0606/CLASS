@@ -1,0 +1,40 @@
+package com.kh.app.member;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.kh.app.template.JDBCTemplate;
+
+//비지니스 로직 실행
+public class MemberService {
+
+	//회원가입
+	public void join(MemberVo vo) throws Exception {
+		
+		//유효성 검사
+		//vo.getPwd().length() > 4
+				
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//입력받기
+		
+		MemberDao dao = new MemberDao();
+		int result = dao.join(conn,vo);
+		
+		
+		//result
+		if(result == 1 ) {
+			//성공로직
+			System.out.println("회원가입 성공");
+			conn.commit();
+		}else {
+			System.out.println("회원가입 실패");
+			conn.rollback();
+		}
+		//close
+		conn.close();
+		
+	}
+	
+}

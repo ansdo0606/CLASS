@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <script src="03_베열.js"></script>
+</head>
+<body>
+    
+    <h1>배열</h1>
+
+    <h2>선언 및 초기화</h2>
+    
+    <pre>
+        자바스크립트에서 배열은 자료형을 지정하지 않기때문에 한 배열 안에 모든 자료형의 데이터 보관이 가능하다. <br>
+        배열 선언 시 크기를 지정하지 않고 선언할 수도 있고 크기를 정하고 선언할 수도 있다.
+    </pre>
+
+    <script>
+
+        let arr1 = new Array();
+        let arr2 = new Array("aaa", "bbb", "ccc");
+        let arr3 = [];
+        let arr4 = ["apple", 
+                    123,3.14,
+                    function fff(){alert("알람발생");},
+                    ["배","열","안","배","열"]
+                    ];
+
+       
+
+        //console.log(arr1);
+        //console.log(arr2);
+        //console.log(arr3);
+        //console.log(arr4);
+        //arr1과 arr3은 완전 같음 그래서 arr3만 사용할 예정
+        //arr2와 arr4도 같음
+
+    </script>
+
+    <h2>배열의 메소드</h2>
+    <pre>
+     배열도 하나의 객체이기 때문에 배열에서 활용할 수 있는 메소드들이 존재한다. 
+    </pre>
+
+    <h3>1) indexOf()</h3>
+    -찾고싶은 요소의 인덱스 번호가 출력된다. <br>
+    -요소의 위치 리턴 <br>
+    <button onclick="f01();">indexOf test</button>
+
+    <h3>2) concat()</h3>
+    -두 배열의 문자열을 합쳐준다. <br>
+    -배열의 결합하여 리턴 <br>
+    <button onclick="f02();">concat test</button>
+
+    <h3>3) join()</h3>
+    -문자열을 ,로 합쳐서 출력한다. <br>
+    -배열의 요소들을 결합하여 문자열로 리턴 <br>
+    <button onclick="f03();">join test</button>
+    
+    <h3>4) reverse()</h3>
+    -배열의 순서를 반대로 뒤집어서 출력한다. <br>
+    -원본 배열에도 손을 댄다. <br>
+    -원본 배열의 순서를 뒤집음 <br>
+    <button onclick="f04();">reserse test</button>
+
+    <h3>5) sort() (중요함)</h3>
+    -배열을 정렬할때 사용한다! <br>
+    -파라미터 값에 함수를 넣을 수 있다! <br>
+    -함수에 따라 정렬이 달라진다! <br>
+    -문자열로 취급하여 첫번째 문자열을 기준으로 순서대로 나열한다. <br>
+    -함수를 전달받으면 비교하고 내보낸다. <br>
+    -return x-y이면 오름차순으로 정렬한다. <br>
+    -배열의 0번째와 1번째를 비교해서 리턴값이 양수면 바꿔주고 음수면 그대로 놔둔다. <br> 
+    <button onclick="f05();">sort test</button>
+
+    <h3>6) push(), pop()</h3>
+    -push = 배열에서 요소를 추가해주고 인덱스 번호를 출력해준다. <br>
+    -pop = 배열에서 마지막 요소를 꺼내고 배열에서 꺼낸 요소를 삭제한다. <br>
+    <button onclick="f06();">push, pop test</button>
+    
+    <h3>7) shift(), unshift()</h3>
+    -shift = 배열의 첫번째 요소를 꺼내고 배열에서 꺼낸 요소를 삭제한다. <br>
+            전체를 왼쪽으로 이동하고 맨 앞의 요소 제거 <br>
+    -unshift = 배열의 요소의 갯수를 출력한다. 파라미터 값을 적으면 맨 앞에 요소 추가한다.<br>
+               전체를 오른쪽으로 이동하고 맨 앞에 요소 추가 <br>
+    <button onclick="f07();">shift, unshift test</button>
+
+    <h3>8) slice(), splice()</h3>
+    -slice = 파라미터 값을 2개 적으면 1번 값 이상 2번 값 미만의 요소가 출력된다. <br>
+             원본 배열을 그대로 둔다. <br>
+    -splice = 파라미터 값을 2개 적고 새로운 요소 값을 적으면 1번값의 인덱스부터 2번값만큼의 요소를 원본 배열에서 <br>
+              잘라내고 그 자리에 새로운 요소를 추가할 수 있다.  <br>
+    <button onclick="f08();">slice, splice test</button>
+
+
+
+
+
+</body>
+</html>

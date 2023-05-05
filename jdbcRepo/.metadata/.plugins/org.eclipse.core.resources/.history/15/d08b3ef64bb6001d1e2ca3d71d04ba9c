@@ -1,0 +1,36 @@
+package com.kh.app.member;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.kh.app.template.JDBCTemplate;
+
+public class MemberService {
+
+	public void join(MemberVo vo) throws Exception {
+
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//sql
+		String sql = "INSERT INTO MEMBER(NO, ID, PWD, NICK) VALUES(SEQ_MEMBER_NO.NEXTVAL,?,?,?)";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, vo.getMemberId());
+		pstmt.setString(2, vo.getMemberPwd());
+		pstmt.setString(3, vo.getMemberNick());
+		int result = pstmt.executeUpdate();
+		
+		
+		
+		//result
+		if (result == 1) {
+			System.out.println("성공");
+			conn.commit();
+		}else {
+			System.out.println("실패");
+			conn.rollback();
+		}
+		//close
+		conn.close();
+	}
+}

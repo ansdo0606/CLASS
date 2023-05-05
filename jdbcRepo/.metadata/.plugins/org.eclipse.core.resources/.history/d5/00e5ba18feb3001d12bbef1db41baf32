@@ -1,0 +1,23 @@
+package com.kh.app.member;
+
+public class MemberService {
+	
+	//회원가입
+	public void join() {
+		
+		//conn
+		
+		//sql
+		
+		//result
+		
+		//close
+		
+		
+	}
+	//로그인
+	
+	//비번변경
+	
+	//탈퇴
+}

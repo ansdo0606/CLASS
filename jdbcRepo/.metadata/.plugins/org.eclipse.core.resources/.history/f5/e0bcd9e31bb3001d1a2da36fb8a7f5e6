@@ -1,0 +1,111 @@
+package com.kh.member;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+import com.kh.jdbc.JDBCTemplate;
+import com.kh.main.Main;
+import com.kh.main.MainMenu;
+
+public class MemberService {
+	
+	//회원가입(=DB에 insert) 
+	public void join() throws Exception {
+		
+		//디비연결 == 커넥션 객체얻기
+		Connection conn = JDBCTemplate.getConnection();
+		
+		System.out.println("아이디 : ");
+		String memberId = Main.SC.nextLine();
+		System.out.println("패스워드 : ");
+		String memberPwd = Main.SC.nextLine();
+		System.out.println("닉네임 : ");
+		String memberNick = Main.SC.nextLine();
+		//SQL실행
+		String sql = "INSERT INTO MEMBER(NO,ID,PWD,NICK) VALUES(SEQ_MEMBER_NO.NEXTVAL,?,?,?)";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, memberId);
+		pstmt.setString(2, memberPwd);
+		pstmt.setString(3, memberNick);
+		int result = pstmt.executeUpdate();
+		
+		//메소드분리,입력받는거 따로처리
+		
+		
+		//실행결과에 따라 처리 (1개 row가 insert가 되었는지)
+		if (result == 1) {
+			System.out.println("회원가입 성공");
+			conn.commit();
+		}else {
+			System.out.println("회원가입 실패");
+			conn.rollback();
+		}
+		//수동으로 처리할수 있다.(AutoCommit이 꺼져있을때만 가능)
+		//자동커밋이 켜져있으면 트랜잭션 처리 직접 불가능
+		//트랜잭션 관리 하고싶다? 그럼 자동커밋 끄기
+		
+		
+		//정리
+		conn.close();
+		
+	}
+	//로그인 
+	public void login() {
+		
+	}
+	//수정
+	public void edit() throws Exception {
+		Connection conn = JDBCTemplate.getConnection();
+		//입력받기
+		System.out.println("비밀번호를 변경할 회원 번호 : ");
+		String num = Main.SC.nextLine();
+		System.out.println("변경할 비밀번호 : ");
+		String pwd = Main.SC.nextLine();
+		
+		
+	    String sql = "UPDATE MEMBER SET PWD = ? WHERE NO = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, pwd);
+		pstmt.setString(2, num);
+		int result = pstmt.executeUpdate();
+
+		if (result == 1) {
+			System.out.println("수정 성공");
+			conn.commit();
+		}else {
+			System.out.println("수정 실패");
+		}
+		conn.close();
+	}
+	//삭제
+	public void quit() throws Exception {
+		//conn
+		Connection conn = JDBCTemplate.getConnection();
+		
+		//회원번호 입력 받기
+		System.out.println("탈퇴할 회원 번호 : ");
+		String num_ = Main.SC.nextLine();
+		int num = Integer.parseInt(num_);
+		
+		//sql
+		String sql = "DELETE MEMBER WHERE NO = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		int result = pstmt.executeUpdate();
+		//result
+		if (result == 1) {
+			System.out.println("탈퇴성공");
+			conn.commit();
+		}else {
+			System.out.println("탈퇴실패");
+		}
+		//close
+		conn.close();
+}
+	//회원 목록 조회
+	public void selectList() {
+	
+}
+}

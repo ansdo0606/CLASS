@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;spring11json&apos;" deleteContents="true" description="Delete resource &apos;spring11json&apos;" element1="/spring11json" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1681776870362"/>
+</session>

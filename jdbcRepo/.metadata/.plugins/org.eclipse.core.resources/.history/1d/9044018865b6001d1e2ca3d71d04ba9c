@@ -1,0 +1,10 @@
+package com.kh.app.member;
+
+//비지니스 로직 처리
+//conn 커넥션
+//sql(dao 호출해서 진행)
+//결과에 따라 처리
+//close 정리
+public class MemberService {
+	
+}

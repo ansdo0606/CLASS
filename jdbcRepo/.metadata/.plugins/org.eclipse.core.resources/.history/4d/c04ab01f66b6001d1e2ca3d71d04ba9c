@@ -1,0 +1,6 @@
+package com.kh.app.member;
+
+//sql 실행
+public class MemberDao {
+	
+}

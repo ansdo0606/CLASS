@@ -1,0 +1,25 @@
+package com.kh.app.member;
+
+import java.sql.Connection;
+
+//비지니스 로직 실행
+public class MemberService {
+
+	//회원가입
+	public void join(MemberVo vo) {
+		
+		//유효성 검사
+		//vo.getPwd().length() > 4
+				
+		//conn
+		Connection conn = JDBCTemplate.getConnection;
+		//sql
+		
+		//result
+		
+		//close
+		
+		
+	}
+	
+}

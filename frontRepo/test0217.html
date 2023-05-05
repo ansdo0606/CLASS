@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./test0217.js"></script>
+    <style>
+        .red-color{background-color: red;}
+        .green-color{background-color: green;}
+    </style>
+</head>
+<body>
+   
+    <fieldset>
+        <legend>회원 가입 양식</legend>
+        <form action="" onsubmit="return checkValid();">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" name="memberId"></td>
+                    <td><button id="btn1">중복확인</button></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" name="pwd1"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인</td>
+                    <td><input type="password" name="pwd2"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>지역</td>
+                    <td>
+                        서울<input type="radio" name="area" value="S">
+                        부산<input type="radio" name="area" value="B">
+                        대구<input type="radio" name="area" value="D">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="reset" value="초기화">
+                        <input type="submit" value="회원가입">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+
+</body>
+</html>

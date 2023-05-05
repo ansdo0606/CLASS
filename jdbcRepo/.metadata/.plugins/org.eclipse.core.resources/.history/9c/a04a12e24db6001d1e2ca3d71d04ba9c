@@ -1,0 +1,7 @@
+package com.kh.app.template;
+
+public class JDBCTemplate {
+	public void name() {
+		
+	}
+}
