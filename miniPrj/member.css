@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(187, 192, 231);
+}
+header{
+    background-color: rgb(229, 222, 143);
+    font-style:italic;
+    border-radius: 10px;
+    text-align: center; 
+}
+h1{
+    font-size: 50px;
+    font-weight: bolder;
+    background-image: linear-gradient(to right top, blue, skyblue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 0%;
+}
+.red-color{color: red;}
+.blue-color{color: blue;}
+fieldset{
+    border-radius: 5px;
+    
+
+}
+.btns{
+    text-align: center;
+}

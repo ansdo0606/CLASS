@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <script defer src="./member.js"></script>
+    <link rel="stylesheet" href="./member.css">
+</head>
+<body>
+    
+    <header><h1>회원가입</h1></header>
+    <form action="" onsubmit="return checkValid();">
+    <fieldset>
+        <legend>개인정보 입력란</legend>
+        <table>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="name" required></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="memberId" required></td>
+                <td> <button id="btn00">확인</button></td>
+            </tr>
+            <tr>
+                <td colspan="3" id="id-result">6글자 이상 12글자 이하로 사용가능합니다.</td>
+                
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="text" name="pwd1" required></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="text" name="pwd2" required></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3" id="pwd-result">비밀번호 일치 여부 확인</td>
+                
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="text" name="email1" required>@</td>
+                <td>
+                    <select required>
+                        <option value="google">google.com</option>
+                        <option value="naver">naver.com</option>
+                        <option value="daum1">hanmail.net</option>
+                        <option value="daum2">daum.net</option>
+                        <option value="kakao">kakao.com</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="btns"><input type="reset" id="btn01">&nbsp&nbsp<input type="submit" value="회원가입" id="btn02"></td>
+            </tr>
+        </table>
+    </fieldset>
+    </form>
+</body>
+</html>

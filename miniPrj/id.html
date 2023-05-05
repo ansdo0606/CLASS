@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 중복확인</title>
+    <style>
+        body{
+            background-color: rgb(187, 192, 231);
+        }
+        h1{
+            text-align: center;
+            font-weight: bolder;
+            background-image: linear-gradient(to right top, blue, skyblue);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0%;
+        }
+
+        fieldset{
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>팝업창</h1>
+    <fieldset>
+    아이디 <input type="text" name="memberId">
+    <button onclick="f01();" id="btn01">확인</button>
+    </fieldset>
+    <script>
+        const user = document.getElementsByName("memberId");
+        var reg = "/^[a-zA-Z0-9!@#]{6,12}$/";
+        var result = reg.test(user);
+        function f01() {
+            
+        if(!result){
+            alert("사용이 불가능 합니다. 다시 작성해주세요.")
+            return false;
+        }else{
+        alert("사용가능한 아이디입니다.");
+
+        const parentInput = window.opener.document.querySelector("input[name=memberId]");
+        const popupInput = document.querySelector("input[name=memberId]");
+        parentInput.value = popupInput.value;
+        return true;
+        } 
+        };
+    </script>
+</body>
+</html>
