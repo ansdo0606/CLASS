@@ -1,0 +1,28 @@
+package com.kh.app;
+
+import java.util.Map;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MemberService {
+
+	private final SqlSessionTemplate sst; 
+	private final MemberDao dao;
+
+	@Autowired
+	public MemberService(SqlSessionTemplate sst, MemberDao dao) {
+		this.sst = sst;
+		this.dao = dao;
+		
+	}
+	
+	
+	public int join(Map<String,String> paramMap) {
+		return dao.join(sst,paramMap);
+	}
+
+	
+}

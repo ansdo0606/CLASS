@@ -1,0 +1,14 @@
+package com.kh.app;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class MemberController {
+	
+	@PostMapping("join")
+	public String join() {
+		
+		return "join";
+	}
+}

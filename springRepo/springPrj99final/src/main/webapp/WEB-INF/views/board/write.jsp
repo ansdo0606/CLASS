@@ -102,4 +102,5 @@
 
         thumbnailArea.appendChild(imgTag);
     }
+    
 </script>

@@ -1,0 +1,26 @@
+package com.kh.app;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+//@ControllerAdvice(basePackages = {"com.kh.app"})
+@ControllerAdvice(annotations = Controller.class)
+public class ErrorProcessor {
+
+	@ExceptionHandler(Exception.class)
+	public String handle01(Exception e) {
+		System.out.println("예외발생");
+		e.printStackTrace();
+		return "abc";
+	}
+	
+	@ExceptionHandler(NullPointerException.class)
+	public String handle02() {
+		System.out.println("NPE 발생");
+		return "errorPageNpe";
+	}
+	
+	
+	
+}

@@ -1,0 +1,39 @@
+package com.kh.app;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+//public class TestInterceptor extends HandlerInterceptorAdapter{
+public class TestInterceptor implements HandlerInterceptor{
+
+	//언제? 컨트롤러 가기 전에 동작
+	//핸들러 : 
+	//리턴값 : true 면 통과, false 면 차단
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		System.out.println("preHandle 호출됨");
+		System.out.println(handler);
+		return HandlerInterceptor.super.preHandle(request, response, handler);
+	}
+
+	//
+	@Override
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
+			ModelAndView modelAndView) throws Exception {
+		HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
+	}
+
+	@Override
+	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
+			throws Exception {
+		HandlerInterceptor.super.afterCompletion(request, response, handler, ex);
+	}
+
+	
+	
+}
